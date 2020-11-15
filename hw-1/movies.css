@@ -1,0 +1,40 @@
+body{
+    background-image: url('images/background.png');
+    width: max-content;
+    padding: 0%;
+    margin: 0%;
+}
+
+.naslov{
+    text-align: center;
+    font-size: 24pt;
+    font-family: 'Times New Roman', Times, serif;
+    text-shadow: 3px 3px #999999;
+    font-weight: bold;
+}
+
+.glavna{
+    max-width: 55%;
+    margin: auto;
+    border: 5px solid #999999;
+    /*padding: 5px;*/ 
+    /*u tekstu je jedno a na slici je drugacije*/
+    background-color: #EEEEEE;
+}
+
+footer{
+    background-color: #A2B964;
+    padding: 0.5em;
+    text-align: center;
+}
+
+.baner{
+    background-image:url("images/rbg.png") ;
+    background-repeat: repeat-x;
+    padding: 1rem;
+}
+
+.broj{
+    font-size: 48pt;
+    font-weight: bold;
+}
