@@ -38,7 +38,7 @@ footer{
 .baner{
     background-image:url("images/rbg.png") ;
     background-repeat: repeat-x;
-    padding: 1rem;
+    /*padding: 1rem;*/
 }
 
 .broj{
@@ -46,3 +46,16 @@ footer{
     font-weight: bold;
     color: red;
 }
+
+.quotebubble{
+    font-size: 13pt;
+    font-family: 'Times New Roman', Times, serif;
+    width: 90%;
+    background-color: #FFFFFF;
+    border-color: #CCCCCC;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 12px;
+    padding: 1em;
+}
+
