@@ -1,11 +1,11 @@
-/**{
+*{
     font-size: 12pt;
     font-family: Arial, Helvetica, sans-serif;
-}*/
+}
 
 body{
     background-image: url('images/background.png');
-    width: max-content;
+    width: 100%;
     padding: 0%;
     margin: 0%;
     font-size: 12pt;
@@ -23,7 +23,8 @@ body{
 .glavna{
     max-width: 55%;
     margin: auto;
-    border: 5px solid #999999;
+    box-shadow: 5px 5px 5px #999999;
+    /*border: 5px solid #999999;*/
     /*padding: 5px;*/ 
     /*u tekstu je jedno a na slici je drugacije*/
     background-color: #EEEEEE;
@@ -38,13 +39,15 @@ footer{
 .baner{
     background-image:url("images/rbg.png") ;
     background-repeat: repeat-x;
-    /*padding: 1rem;*/
+    margin-bottom: 1rem;
 }
 
 .broj{
     font-size: 48pt;
     font-weight: bold;
     color: red;
+    position: relative;
+    top: -15px;
 }
 
 .quotebubble{
@@ -57,5 +60,29 @@ footer{
     border-style: solid;
     border-radius: 12px;
     padding: 1em;
+    margin: auto;
 }
+
+#w3c{
+    right: 0px;
+    position: absolute;
+}
+
+.ikonica{
+    padding-right: 5px;
+    /*poveriti ovo*/
+}
+
+.ikonica1{
+    padding: 5px;
+    float: left;
+    /*proveriti zasto ide preko donjeg dela*/
+}
+
+.publication{
+    font-size: 13pt;
+    /*da li treba posebna klasa za sve inf i onda posle publication?*/
+    font-style: italic;
+}
+
 
