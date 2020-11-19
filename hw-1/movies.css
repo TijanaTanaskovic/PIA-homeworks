@@ -70,18 +70,19 @@ footer{
 
 .ikonica{
     padding-right: 5px;
-    /*poveriti ovo*/
 }
 
 .ikonica1{
     padding: 5px;
-    float: left;
-    /*proveriti zasto ide preko donjeg dela*/
+    /*resila tabelom*/
 }
 
 .publication{
     font-size: 13pt;
-    /*da li treba posebna klasa za sve inf i onda posle publication?*/
+    /*imaju jednu zajednicku i jednu klasu gde su sami*/
+}
+
+.ideo{
     font-style: italic;
 }
 
