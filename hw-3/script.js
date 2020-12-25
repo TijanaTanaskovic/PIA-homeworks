@@ -107,3 +107,55 @@ function checkAnswer() {
         changeQuestion();
     }
 }
+
+
+function showEndGame() {
+    
+    document.querySelector(".navbar-text").textContent = "Vreme: " + time;
+
+    
+    if (time != 0) {
+        document.querySelector("#showScore").textContent = time;
+    } else {
+        document.querySelector("#showScore").textContent = "DNF";
+    }
+
+    
+    if (questionDiv.className != "questionFadeOut") {
+        questionDiv.className = "questionFadeOut";
+    }
+    setTimeout(function () {
+        questionDiv.style = "display: none;";
+        answerDiv.style = "display: none;";
+        endGameDiv.style = "display: block;";
+        endGameDiv.className = "slideDown";
+    }, 700)
+}
+
+function submitAndSaveScore(event) {
+    event.preventDefault();
+    if (playerInitials.value.trim() == '') {
+        if (alertBoxDiv.style != "display:block;") {
+            alertBoxDiv.style = "display:block;";
+
+            setTimeout(function () {
+                alertBoxDiv.style = "display: none;";
+            }, 1000);
+        }
+        return;
+    } else {
+        var newHighScore = {
+            initials: playerInitials.value.toUpperCase().trim(),
+            score: time
+        };
+        scoresArray.push(newHighScore);
+        scoresArray.sort(function (a, b) { return b.score - a.score });
+        localStorage.setItem("localHighScores", JSON.stringify(scoresArray));
+        window.location.href = "scores.html"
+    }
+}
+
+
+document.querySelector("#quizStart").onclick = startQuiz;
+document.addEventListener("click", checkAnswer);
+document.querySelector("#submitButton").onclick = submitAndSaveScore;
