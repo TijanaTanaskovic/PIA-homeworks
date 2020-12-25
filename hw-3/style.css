@@ -96,3 +96,26 @@ h1, h2 {
     display: block;
     margin-bottom: 5px;
 }
+
+/* animacija za odgovore */
+.answerSlideUp {
+    animation-name: answer-slide-up;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;
+    animation-duration: 0.30s;
+}
+
+.slideUp {
+    animation-name: slide-up;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-duration: 0.50s;
+}
+
+.slideDown {
+    animation-name: slide-down;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-duration: 0.70s;
+}
