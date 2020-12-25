@@ -119,3 +119,31 @@ h1, h2 {
     animation-timing-function: ease-out;
     animation-duration: 0.70s;
 }
+
+.questionFadeOut {
+    animation-name: quiz-fade-out;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.30s;
+}
+
+.questionFadeIn {
+    animation-name: quiz-fade-in;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.30s;
+}
+
+.fadeInOut {
+    animation-name: fade-in-out;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1.00s;
+}
+
+.fadeAway {
+    animation-name: fade-away;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.30s;
+}
