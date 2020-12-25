@@ -27,3 +27,11 @@
     margin: left;
     position: relative;
 }
+/* dizajniranje bloka kad se zavrsi igra  */
+
+#endGameBlock {
+    display: none;
+    text-align: center;
+    margin: auto;
+    position: relative;
+}
