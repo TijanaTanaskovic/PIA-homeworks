@@ -7,8 +7,9 @@
 
 body {
     
-    background-image: url('images/naslovna.jpg');
+    background-image: url('images/kopija.jpg');
     font-family: 'Raleway', sans-serif;
+    background-repeat: no-repeat;
 }
 
 .container {
