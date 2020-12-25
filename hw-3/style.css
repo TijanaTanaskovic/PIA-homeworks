@@ -50,3 +50,24 @@
     font-size: 8em;
     font-weight: bolder;
 }
+
+/* definisanje boje za skor i za navigaciju */
+
+#alertBox {
+    margin: auto;
+    margin-top: 15px;
+    max-width: 400px;
+}
+
+h1, h2 {
+    font-weight: bolder;
+    margin-bottom: 30px;
+}
+
+.navbar-brand, .navbar-brand:hover, .navbar-brand:active {
+    color: #800080;
+}
+
+.scoreAltColour {
+    background-color: rgb(249, 182, 255);
+}
