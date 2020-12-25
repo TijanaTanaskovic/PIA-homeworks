@@ -26,7 +26,7 @@ function startQuiz() {
 
     document.querySelector("#titleScreen").style = "animation-play-state: running;"
     document.querySelector(".navbar-text").textContent = "Vreme: " + time;
-
+    document.querySelector(".poeni").textContent = "Poeni: " + score;
     
     changeQuestion();
 
@@ -79,6 +79,7 @@ function checkAnswer() {
             if (playerAnswer === questions[questionNum].answer) {
                 answerText = "Tačan odgovor";
                 score+=1;
+                document.querySelector(".poeni").textContent = "Poeni: " + score;
                 // ako više nema dovoljno vremena za odg, setuje vreme na 0
             } else {
                 answerText="Netačno! Tačan odgovor je "+questions[questionNum].answer;
@@ -106,7 +107,7 @@ function checkAnswer() {
         }
         
         questionNum++;
-        changeQuestion();
+        setTimeout(changeQuestion, 2000);
     }
 }
 
