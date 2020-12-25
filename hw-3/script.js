@@ -111,6 +111,9 @@ function checkAnswer() {
     }
 }
 
+function izlaz(){
+    showEndGame();
+}
 
 function showEndGame() {
     
