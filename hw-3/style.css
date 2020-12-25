@@ -35,3 +35,11 @@
     margin: auto;
     position: relative;
 }
+
+#answerResult {
+    display: none;
+    position: fixed;
+    color: darkgray;
+    font-style: italic;
+    font-size: 18pt;
+}
