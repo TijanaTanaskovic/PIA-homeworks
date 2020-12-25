@@ -69,3 +69,19 @@ function changeQuestion() {
     }, 400);
 
 }
+
+// uzima odgovor od takmičara i upoređuje ga sa pravim odgovorom u datoteci
+function checkAnswer() {
+    if (event.target.nodeName == "BUTTON") {
+        var playerAnswer = event.target.value;
+        if (playerAnswer) {
+            if (playerAnswer === questions[questionNum].answer) {
+                answerText = "Correct!";
+                // ako više nema dovoljno vremena za odg, setuje vreme na 0
+            } else {
+                answerText = "Wrong!";
+                time -= 20;
+                if (time <= 0) {
+                    time = 0;
+                }
+            }
