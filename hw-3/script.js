@@ -9,6 +9,7 @@ var optionButtons = [document.querySelector("#quizOption1"), document.querySelec
 document.querySelector("#quizOption3"), document.querySelector("#quizOption4")]
 var playerInitials = document.querySelector("#playerInitials");
 var questionNum = 0;
+var score=0;
 var scoresArray;
 playerInitials.value = '';
 
@@ -77,9 +78,10 @@ function checkAnswer() {
         if (playerAnswer) {
             if (playerAnswer === questions[questionNum].answer) {
                 answerText = "Tačan odgovor";
+                score+=1;
                 // ako više nema dovoljno vremena za odg, setuje vreme na 0
             } else {
-                answerText = "Netačan odgovor!";
+                answerText="Netačno! Tačan odgovor je "+questions[questionNum].answer;
                 time -= 20;
                 if (time <= 0) {
                     time = 0;
@@ -115,7 +117,7 @@ function showEndGame() {
 
     
     if (time != 0) {
-        document.querySelector("#showScore").textContent = time;
+        document.querySelector("#showScore").textContent = score;
     } else {
         document.querySelector("#showScore").textContent = "DNF";
     }
@@ -146,7 +148,7 @@ function submitAndSaveScore(event) {
     } else {
         var newHighScore = {
             initials: playerInitials.value.toUpperCase().trim(),
-            score: time
+            score: score
         };
         scoresArray.push(newHighScore);
         scoresArray.sort(function (a, b) { return b.score - a.score });
