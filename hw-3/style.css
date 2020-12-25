@@ -19,3 +19,11 @@
     animation-duration: 0.40s;
     animation-play-state: paused;
 }
+
+/* dizajn za pitanja */
+#questionBlock {
+    display: none;
+    text-align: left;
+    margin: left;
+    position: relative;
+}
