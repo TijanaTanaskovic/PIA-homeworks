@@ -24,7 +24,7 @@ function startQuiz() {
     event.stopPropagation();
 
     document.querySelector("#titleScreen").style = "animation-play-state: running;"
-    document.querySelector(".navbar-text").textContent = "Time: " + time;
+    document.querySelector(".navbar-text").textContent = "Vreme: " + time;
 
     
     changeQuestion();
@@ -38,7 +38,7 @@ function startQuiz() {
 
     timeLimit = setInterval(function () {
         time--;
-        document.querySelector(".navbar-text").textContent = "Time: " + time;
+        document.querySelector(".navbar-text").textContent = "Vreme: " + time;
         if (time <= 0) {
             clearInterval(timeLimit);
             showEndGame();
@@ -76,12 +76,34 @@ function checkAnswer() {
         var playerAnswer = event.target.value;
         if (playerAnswer) {
             if (playerAnswer === questions[questionNum].answer) {
-                answerText = "Correct!";
+                answerText = "Tačan odgovor";
                 // ako više nema dovoljno vremena za odg, setuje vreme na 0
             } else {
-                answerText = "Wrong!";
+                answerText = "Netačan odgovor!";
                 time -= 20;
                 if (time <= 0) {
                     time = 0;
                 }
             }
+            
+            // pokazuje rezultat odgovora, onda ga skriva
+            answerDiv.innerHTML = `<hr /> ${answerText}`
+            if (answerDiv.style != "display: block;") {
+                answerDiv.style = "display: block;";
+            }
+            answerDiv.className = "answerSlideUp";
+            setTimeout(function () {
+                answerDiv.className = "fadeAway";
+                setTimeout(function () {
+                    answerDiv.style = "display: none;";
+                }, 300);
+            }, 700);
+
+            
+            questionDiv.className = "questionFadeOut";
+        }
+        
+        questionNum++;
+        changeQuestion();
+    }
+}
