@@ -71,3 +71,28 @@ h1, h2 {
 .scoreAltColour {
     background-color: rgb(249, 182, 255);
 }
+
+.scoreStyle {
+    padding: 3px 3px 3px 10px;
+    font-size: 16pt;
+}
+
+.btn-primary {
+    background: #af00af;
+    border-color: #af00af;
+}
+
+.btn-primary:hover {
+    background-color: #da45da;
+    border-color: #da45da;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
+    background: #800080;
+    border-color: #800080;
+}
+
+.btnOption {
+    display: block;
+    margin-bottom: 5px;
+}
