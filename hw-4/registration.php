@@ -5,7 +5,7 @@ header('location:login.php');
 
 $con = mysqli_connect('localhost', 'root', '');
 
-mysqli_select_db($con, 'userregistration');
+mysqli_select_db($con, 'imdb');
 
 $name1 = $_POST['name'];
 $sur = $_POST['surname'];
