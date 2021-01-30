@@ -6,7 +6,7 @@ body, html{
   
 .bg {
 
-    background-image: url("images/imdb1.jpg");
+    background-image: url('imdb1.jpg');
   
     height: 100%; 
 

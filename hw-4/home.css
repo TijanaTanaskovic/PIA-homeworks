@@ -29,3 +29,19 @@ nav form{
 .problem{
     margin-right: 0;
 }
+
+.movie-photo{
+  height: 400px;
+  width: 300px;
+  margin-top: 7px;
+}
+
+footer{
+  margin-top: 200px;
+}
+
+.problem1{
+  margin-top: 5px;
+  color:white;
+}
+
