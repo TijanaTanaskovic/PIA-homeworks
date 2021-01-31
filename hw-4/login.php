@@ -44,14 +44,11 @@ Domaci 4 (PIA 2020/2021)
               <input type="password" placeholder="Enter Password" name="psw" required>
                 
               <button type="submit">Login</button>
-              <label>
-                <input type="checkbox" checked="checked" name="remember"> Remember me
-              </label>
             </div>
         
             <div class="container" style="background-color:#f1f1f1">
               <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-              <span class="psw">Forgot <a href="#">password?</a></span>
+
             </div>
           </form>
         </div>
@@ -74,7 +71,7 @@ Domaci 4 (PIA 2020/2021)
         <form class="modal1-content" action="registration.php"  method="post">
             <div class="container">
             <h1>Sign Up</h1>
-            <p>Please fill in this form to create an account.</p>
+            <p>Please fill this form with your informations.</p>
             <hr>
 
             <label for="name"><b>Name</b></label>
@@ -91,8 +88,7 @@ Domaci 4 (PIA 2020/2021)
 
             <label for="psw"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="psw" required>
-            
-            <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+          
 
             <div class="clearfix">
                 <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>

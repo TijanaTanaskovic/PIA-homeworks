@@ -24,7 +24,7 @@ if($num==1){
 } 
 else
 {
-    $reg= "insert into usertable(name, surname, email, username, psw) values ('$name1' , '$sur' , '$mail', '$usname', '$pass')";
+    $reg= "insert into usertable(name, surname, email, username, psw, admin) values ('$name1' , '$sur' , '$mail', '$usname', '$pass', '')";
     mysqli_query($con, $reg);
     echo"Registration is successful";
 }
