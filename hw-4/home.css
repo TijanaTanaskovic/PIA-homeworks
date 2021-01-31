@@ -45,3 +45,6 @@ footer{
   color:white;
 }
 
+.fixed-top  {
+  -webkit-backface-visibility: hidden;
+}

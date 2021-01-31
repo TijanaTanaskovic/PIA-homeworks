@@ -200,3 +200,6 @@ hr {
   }
 }
 
+.fixed-top  {
+  -webkit-backface-visibility: hidden;
+}
