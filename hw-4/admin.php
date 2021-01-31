@@ -42,6 +42,14 @@
     }
 ?>
 
+<?php
+
+    if(isset($_GET['edit'])){
+        $s=$_GET['edit'];
+        header("location:movieedit.php?edit1=$s");
+    }
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -142,7 +150,7 @@ Domaci 4 (PIA 2020/2021)
             </div>
         </div>
     <a href="admin.php?delete=<?php echo $row['id'] ?>"><button type="submit"  name="delete" class="btn btn-dark">Delete</button> </a> 
-    <button type="submit"  name="edit" class="btn btn-dark">Edit</button> </br> </br> </br>
+    <a href="admin.php?edit=<?php echo $row['id'] ?>"><button type="submit"  name="edit" class="btn btn-dark">Edit</button> </br> </br> </br>
     </div>
 <?php
   }}
