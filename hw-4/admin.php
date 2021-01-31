@@ -134,6 +134,8 @@ Domaci 4 (PIA 2020/2021)
             </a>
             </div>
         </div>
+    <button type="submit"  name="delete" class="btn btn-dark">Delete</button>  
+    <button type="submit"  name="edit" class="btn btn-dark">Edit</button> </br> </br> </br>
     </div>
 <?php
   }}

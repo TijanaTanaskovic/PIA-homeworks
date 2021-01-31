@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <!--
@@ -6,6 +7,7 @@ Domaci 4 (PIA 2020/2021)
 <head>
     <title>PIA HW - IMDB</title>
     <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="movies.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Tijana Tanaskovic" />
     <meta charset="utf-8" />
@@ -33,25 +35,8 @@ Domaci 4 (PIA 2020/2021)
       <li class="nav-item active">
         <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
       </li>
-      <form action="home.php" method="post">
-      <label for="genre"><p class="problem1">Choose a genre:</p></label>
-      <select name="genre" id="genre">
-      <option value="action">Action</option>
-      <option value="comedy">Comedy</option>
-      <option value="drama">Drama</option>
-      <option value="thriller">Thriller</option>
-      <option value="horror">Horror</option>
-      <option value="romance">Romance</option>
-      </select>
-      <br><br>
-      <input type="submit" class="btn btn-outline-light" value="Submit">
-    </form>
     </ul>
-    
-    <form class="navbar-form navbar-right" action="home.php" method="post">
-            <input type="text" class="form-control mr-sm-2" placeholder="Search for a movie" name="find">
-            <button type="submit" class="btn btn-outline-light">Search</button>
-    </form>
+
     <div class="problem">
     <form class="navbar-form navbar-right">
     <a class="btn btn-outline-light" href="login.php">Log Out</a>
@@ -61,42 +46,55 @@ Domaci 4 (PIA 2020/2021)
 </nav>
 
 <?php
-    
     session_start();
 
-    $con = mysqli_connect('localhost', 'root', '');
+    if(isset($_GET['name'])){  
+     
+    $mysqli = new mysqli('localhost', 'root', '', 'imdb');
+    $name=$_GET['name'];
+    $res=$mysqli->query("SELECT * FROM movies WHERE name='$name'")  or die($mysqli->error);
 
-    mysqli_select_db($con, 'imdb');
-
-    if(isset($_POST['find'])) {
-    $search = ($_POST['find']);
-    $check = "SELECT * FROM movies WHERE name LIKE '%$search%'";
-    }
-    else if(isset($_POST['genre'])) {
-    $search = ($_POST['genre']);
-    $check = "SELECT * FROM movies WHERE genre LIKE '%$search%'";
-    }
-    else{
-    $check = "SELECT * FROM movies";
-    }
-
-    $result = mysqli_query($con, $check);
-    $resultCheck = mysqli_num_rows($result);
-    if($resultCheck > 0){
-        while($row = mysqli_fetch_assoc($result)){
-        
+    while($row = $res->fetch_assoc()):
+ 
+       
 ?>
-    <div class="container">
-        <div class="content">
-            <img class="movie-photo" src="<?= $row['photo'] ?>">
-            <div class="title">
-            <a href="moviedetailsuser.php?name=<?php echo $row['name'];?>" >
-            <p class="title"> <?php echo $row['name']; ?></p> 
-            </div>
-        </div>
-    </div>
-<?php
-  }}
+    
+    <tr>
+                <br>
+                <br>        
+            </tr>
+            <tr>
+               <td>
+                <div class="topinfo"> 
+                <?php echo $row['name']?>  (<?php echo $row['releaseYear'] ?>) <?php echo $row['duration'] ?> | <?php echo $row['genre'] ?>
+                </div>
+               </td> 
+        
+            </tr>
+                
+            <tr>
+                <td rowspan=2>
+                  
+                    <img class="image" style="width:400px; height:600px" src="<?php echo $row['photo'] ?>"> 
+                 <br>
+                </td>
+                <br>
+                <td> <div class="short">     <p> <strong> Short description: </strong> </p>    <?php echo $row['shortDescription'] ?></div> 
+                <br>
+                </td> 
+            </tr>
+            <tr>
+                <td>
+                  <div class="inf" >  <p> <strong> Director: </strong> </p>  <?php echo $row['director']?></div> </br>
+                  <div class="inf">  <p> <strong> Screenwriter: </strong> </p>  <?php echo  $row['screenwriter'] ?></div> </br> 
+                  <div class="inf">  <p> <strong> List of actors: </strong></p>  <?php echo  $row['listOfActors'] ?></div> </br>
+                  <div class="inf"> <p> <strong> Production house: </strong> </p> <?php echo $row['productionHouse']  ?></div> </br>
+                </td>
+            </tr>
+
+
+    <?php endwhile;
+}
 ?>
 
 
