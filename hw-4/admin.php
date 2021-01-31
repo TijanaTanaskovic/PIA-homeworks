@@ -32,7 +32,15 @@
     }
 ?>
 
-
+<?php 
+   
+    if(isset($_GET['delete'])){
+        $mysqli = new mysqli ('localhost', 'root', '', 'imdb');
+        $s=$_GET['delete'];
+        $mysqli->query("DELETE FROM movies WHERE id=$s");
+        header("location:admin.php");
+    }
+?>
 
 
 <!DOCTYPE html>
@@ -102,7 +110,6 @@ Domaci 4 (PIA 2020/2021)
 
 <?php
     
-
     $con = mysqli_connect('localhost', 'root', '');
 
     mysqli_select_db($con, 'imdb');
@@ -134,7 +141,7 @@ Domaci 4 (PIA 2020/2021)
             </a>
             </div>
         </div>
-    <button type="submit"  name="delete" class="btn btn-dark">Delete</button>  
+    <a href="admin.php?delete=<?php echo $row['id'] ?>"><button type="submit"  name="delete" class="btn btn-dark">Delete</button> </a> 
     <button type="submit"  name="edit" class="btn btn-dark">Edit</button> </br> </br> </br>
     </div>
 <?php
