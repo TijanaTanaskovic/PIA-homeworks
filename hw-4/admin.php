@@ -86,7 +86,7 @@ Domaci 4 (PIA 2020/2021)
 
     </ul>
     
-    <form class="navbar-form navbar-right" action="home.php" method="post">
+    <form class="navbar-form navbar-right" action="admin.php" method="post">
             <input type="text" class="form-control mr-sm-2" placeholder="Search for a movie" name="find">
             <button type="submit" class="btn btn-outline-light">Search</button>
     </form>
@@ -129,7 +129,9 @@ Domaci 4 (PIA 2020/2021)
         <div class="content">
             <img class="movie-photo" src="<?= $row['photo'] ?>">
             <div class="title">
-            <p class="title"> <?php echo $row['name']; ?></p> <?php echo "</a>"; ?>
+            <a href="moviedetails.php?name=<?php echo $row['name'];?>" >
+            <p class="title"> <?php echo $row['name']; ?></p> 
+            </a>
             </div>
         </div>
     </div>
