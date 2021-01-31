@@ -16,9 +16,18 @@ $result = mysqli_query($con, $s);
 
 $num = mysqli_num_rows($result);
 
+$row = $result->fetch_assoc();
+
+
 if($num==1){
-    header('location:home.php');
-} 
+    if($row['admin']=="admin")
+    
+        header('location:admin.php');
+    else
+    
+        header('location:home.php');
+    
+}
 else
 {
     header('location:login.php');
